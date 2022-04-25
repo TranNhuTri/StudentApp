@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<form class="form" method="GET"> {% csrf_token %}
-    {{form.as_p}}
+<form class="form" method="POST"> {% csrf_token %}
+    <input type="text" name="code" placeholder="Your Code">
     <input type="submit" class="btn btn-primary" value="Save">
 </form>
 {% endblock %}
