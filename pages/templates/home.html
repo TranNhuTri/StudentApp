@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %} 
+    {% if name %}
+        <h1>Hello {{name | capfirst | default:'World'}}!</h1>
+    {% else %}
+    <h1>Hello World!</h1>
+    {% endif %}
+    <p>My skills: {{ skills }}</p>
+    <ul>
+        {% for skill in skills %}
+            {% if  skill == 'django'%}
+                <li>{{forloop.counter}} - {{skill | capfirst | add:' python'}}</li>
+            {% else %}
+                <li>{{forloop.counter}} - {{skill | capfirst}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {{content | safe}}
+{% endblock%}
